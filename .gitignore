@@ -42,3 +42,6 @@ Thumbs.db
 
 # Purple Sector Data Cache (Do not push gigabytes of raw fastf1 telemetry)
 backend/data/raw/cache/
+
+# Un-ignore frontend lib directory
+!frontend/src/lib/
