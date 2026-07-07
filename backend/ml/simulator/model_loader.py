@@ -7,8 +7,15 @@ from catboost import (
 
 
 class ModelLoader:
+    _instance = None
 
-    def __init__(self):
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(ModelLoader, cls).__new__(cls)
+            cls._instance._load_models()
+        return cls._instance
+
+    def _load_models(self):
 
         model_dir = Path(
             "data/ml/models"
